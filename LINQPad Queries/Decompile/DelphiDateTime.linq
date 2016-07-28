@@ -38,5 +38,62 @@ void Main()
             TDateTime aDateTime = new TDateTime();
 			DateTime bDateTime = new DateTime();
             return aDateTime == (TDateTime)bDateTime;
-        }		
+        }
+        public void RunTestOnAssignment()
+        {
+            TDateTime aDateTime = new TDateTime();
+			DateTime bDateTime = new DateTime();
+            TDateTime cDateTime = new TDateTime();
+			aDateTime = bDateTime;
+			bDateTime = cDateTime;
+			
+		}
+		
+        public bool RunTestOnComparisons()
+        {
+            TDateTime aDateTime = new TDateTime();
+			DateTime bDateTime = new DateTime();
+			bool isComparable ;
+            isComparable = aDateTime == (TDateTime)bDateTime; // needs cast
+            isComparable = aDateTime != (TDateTime)bDateTime; // needs cast
+			isComparable = aDateTime > (TDateTime)bDateTime;
+			isComparable = aDateTime < (TDateTime)bDateTime;
+			isComparable = aDateTime <= (TDateTime)bDateTime;
+			isComparable = aDateTime >= (TDateTime)bDateTime;
+
+			isComparable = bDateTime == (DateTime)aDateTime; 
+			isComparable = bDateTime != (DateTime)aDateTime; 
+			isComparable = bDateTime > (DateTime)aDateTime;
+			isComparable = bDateTime < (DateTime)aDateTime;
+			isComparable = bDateTime <= (DateTime)aDateTime;
+			isComparable = bDateTime >= (DateTime)aDateTime;
+			return isComparable;
+        }
+
+        public bool RunTestOnComparisonsFixByMethod()
+        {
+            TDateTime aDateTime = new TDateTime();
+			DateTime bDateTime = new DateTime();
+			bool isComparable ;
+            isComparable = aDateTime.ToOADate() == bDateTime.ToOADate(); 
+            isComparable = aDateTime.ToOADate() != bDateTime.ToOADate(); 
+			isComparable = aDateTime.ToOADate() > bDateTime.ToOADate();
+			isComparable = aDateTime.ToOADate() < bDateTime.ToOADate();
+			isComparable = aDateTime.ToOADate() <= bDateTime.ToOADate();
+			isComparable = aDateTime.ToOADate() >= bDateTime.ToOADate();
+
+			isComparable = bDateTime.ToOADate() == aDateTime.ToOADate(); 
+			isComparable = bDateTime.ToOADate() != aDateTime.ToOADate(); 
+			isComparable = bDateTime.ToOADate() > aDateTime.ToOADate();
+			isComparable = bDateTime.ToOADate() < aDateTime.ToOADate();
+			isComparable = bDateTime.ToOADate() <= aDateTime.ToOADate();
+			isComparable = bDateTime.ToOADate() >= aDateTime.ToOADate();
+			return isComparable;
+        }
+        public bool RunTestOnComparisons(DateTime input)
+        {
+            TDateTime aDateTime = new TDateTime();
+            TDateTime bDateTime = new TDateTime();
+            return (aDateTime > (TDateTime)input) | (input <= (DateTime)bDateTime);
+        }	
     }

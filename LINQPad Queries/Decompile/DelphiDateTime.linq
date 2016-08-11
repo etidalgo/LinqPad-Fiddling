@@ -5,6 +5,7 @@
   <Namespace>Borland.Delphi</Namespace>
   <Namespace>Borland.Vcl</Namespace>
   <Namespace>Borland.Vcl.Units</Namespace>
+  <CopyLocal>true</CopyLocal>
 </Query>
 
 void Main()

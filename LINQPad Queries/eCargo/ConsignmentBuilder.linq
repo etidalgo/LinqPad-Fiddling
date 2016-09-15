@@ -4,11 +4,15 @@
   <Reference Relative="..\..\..\eCargo\eCargo.CSharp\SystemTests\Common\bin\Release\ECargo.SystemTests.Common.dll">D:\dev\eCargo\eCargo.CSharp\SystemTests\Common\bin\Release\ECargo.SystemTests.Common.dll</Reference>
   <Namespace>ECargo.Common.Domain.Core.MasterData</Namespace>
   <Namespace>ECargo.Common.Tests.Common.Helpers.Builders</Namespace>
+  <Namespace>ECargo.SystemTests.Common.ExternalResources</Namespace>
 </Query>
 
-            // No work
+// Need to run in Linqpad AnyCPU (x64)
 			var consignment = new ConsignmentBuilder()
                 .MakeMinimumPersistable()
                 .WithOwnerId(3983)
                 .WithStatus(ConsignmentStatus.Offered)
                 .Build();
+
+// LegacyFtpDocumentSender. 
+			

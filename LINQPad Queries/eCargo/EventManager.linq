@@ -11,8 +11,9 @@
   <Namespace>EventManager</Namespace>
 </Query>
 
-// Problems making this work
-ECargo.Legacy.MigratedWin32.DelphiInitialiser.Initialise();
+// Problems making this work , Need to run in Linqpad AnyCPU (x64)
+// The type initializer for 'TXMgr.Units.TXMgr' threw an exception.
+DelphiInitialiser.Initialise();
 		using (TEventManager eventManager = new TEventManager())
             {
                 eventManager.SetTX(null);

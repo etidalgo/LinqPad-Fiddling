@@ -1,5 +1,7 @@
 <Query Kind="Program" />
 
+// Object.Equals Method (Object) (System) <https://msdn.microsoft.com/en-us/library/bsc2ak47(v=vs.110).aspx>
+
 void Main()
 {
 	Business businessA = new Business(13);
@@ -51,4 +53,4 @@ public class BusinessX
             return BusinessId.GetHashCode();
 		}
 	}
-}	
+}

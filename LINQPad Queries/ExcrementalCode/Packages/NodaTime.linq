@@ -19,6 +19,9 @@ var zonedTime = localTime.InZoneStrictly(timeZone);
 var processStartTime = zonedTime.ToInstant();
 Console.WriteLine($"processStartTime: {processStartTime}");
 
+var timeAsFormatString = String.Format(CultureInfo.InvariantCulture, "{0}", processStartTime);
+Console.WriteLine($"timeAsFormatString: {timeAsFormatString}");
+
 var timeAsString = processStartTime.ToString();
 var instantResult = InstantPattern.GeneralPattern.Parse(timeAsString).Value;
 Console.WriteLine($"instantResult: {instantResult}");

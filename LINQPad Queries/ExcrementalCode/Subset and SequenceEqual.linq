@@ -3,12 +3,11 @@
 void Main()
 {
 	foreach( var (setA, setB) in TestCases() ) {
-		Console.WriteLine("A: {0}", string.Join(", ", setA.Select(i => i.ToString())));
-		Console.WriteLine("B: {0}", string.Join(", ", setB.Select(i => i.ToString())));
+		Console.WriteLine("A: {0}      B: {1}", string.Join(", ", setA.Select(i => i.ToString())), string.Join(", ", setB.Select(i => i.ToString())));
 		Console.WriteLine("Unordered SequenceEqual: {0}", setA.SequenceEqual(setB));
 		var except = setA.Except(setB).Select(ix => ix.ToString());
-		Console.WriteLine("setA except setB: {0}", string.Join(", ", except));
-		Console.WriteLine("setA except setB: {0}", !setA.Except(setB).Any());
+		Console.WriteLine("setA except setB contains: {0}", string.Join(", ", except));
+		Console.WriteLine("!setA.Except(setB).Any(): {0}", !setA.Except(setB).Any());
 		Console.WriteLine("Ordered SequenceEqual: {0}", setA.OrderBy(i => i).SequenceEqual(setB.OrderBy(i => i)));
 	}	
 }

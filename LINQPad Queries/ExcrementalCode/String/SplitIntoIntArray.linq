@@ -1,6 +1,5 @@
 <Query Kind="Program" />
 
-
 // Define other methods and classes here
 void Main()
 {

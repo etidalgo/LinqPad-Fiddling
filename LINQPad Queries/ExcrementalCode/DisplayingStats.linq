@@ -2,7 +2,6 @@
 
 void Main()
 {
-	
 	var reviewerCounts = new Dictionary<string,int>{
 		{ "alpha", 0 },
 		{ "beta", 0}

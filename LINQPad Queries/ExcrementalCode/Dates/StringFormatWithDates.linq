@@ -15,10 +15,10 @@ var textB = string.Format(CultureInfo.InvariantCulture, "Arrived at: {0:G}", arr
 var textC = string.Format(CultureInfo.InvariantCulture, "Arrived at: {0:yyyy-MM-dd HH:mm:ss}", arrivedAt);
 
 var dateTimeOffset = DateTimeOffset.Now;
-var text = string.Format(CultureInfo.InvariantCulture, "Time shown in O, ISO 8601 format: {0:O}", dateTimeOffset);
-Console.WriteLine(dateTimeOffset.ToString("O"));
+Console.WriteLine($"DateTimeOffset with implicit ToString {dateTimeOffset}");
+Console.WriteLine(string.Format(CultureInfo.InvariantCulture, "DateTimeOffset with {{0:O}} {0:O}", dateTimeOffset));
+Console.WriteLine($"DateTimeOffset with ToString(\"O\") {dateTimeOffset.ToString("O")}");
 
 Console.WriteLine(textA);
 Console.WriteLine(textB);
 Console.WriteLine(textC);
-Console.WriteLine(text);

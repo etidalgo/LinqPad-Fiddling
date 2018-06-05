@@ -37,5 +37,12 @@ public class Program
 			Console.WriteLine("{0}: {1}", customFmt.PadRight(20),
 							  updated.ToString(customFmt));
 		}
+		
+		DisplayInStandardCompanyFormat(dateValue);
+	}
+	
+	public static void DisplayInStandardCompanyFormat(DateTime dateTime) {
+		Console.WriteLine($"Standard Company Format: {dateTime:o}");
+	
 	}
 }

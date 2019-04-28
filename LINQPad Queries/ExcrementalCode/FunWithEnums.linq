@@ -3,6 +3,7 @@
 void Main()
 {
 	Console.WriteLine(ArtifactCondition.Fair);
+	Console.WriteLine("-------------");
 
 	var nameColumnWidth = 15;
 	var countColumnWidth = 10;

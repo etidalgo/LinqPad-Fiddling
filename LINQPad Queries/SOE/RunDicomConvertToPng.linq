@@ -1,8 +1,8 @@
 <Query Kind="Statements">
-  <Reference Relative="..\..\..\soeconversions\trunk\APAC_Tools\ConvTool\External Data Mappers\DICOM_Converter\bin\Debug\Dicom.Core.dll">D:\Dev\soeconversions\trunk\APAC_Tools\ConvTool\External Data Mappers\DICOM_Converter\bin\Debug\Dicom.Core.dll</Reference>
-  <Reference Relative="..\..\..\soeconversions\trunk\APAC_Tools\ConvTool\External Data Mappers\DICOM_Converter\bin\Debug\Dicom.Native.dll">D:\Dev\soeconversions\trunk\APAC_Tools\ConvTool\External Data Mappers\DICOM_Converter\bin\Debug\Dicom.Native.dll</Reference>
-  <Reference Relative="..\..\..\soeconversions\trunk\APAC_Tools\ConvTool\External Data Mappers\DICOM_Converter\bin\Debug\DICOM_Converter.dll">D:\Dev\soeconversions\trunk\APAC_Tools\ConvTool\External Data Mappers\DICOM_Converter\bin\Debug\DICOM_Converter.dll</Reference>
-  <Reference Relative="..\..\..\soeconversions\trunk\APAC_Tools\ConvTool\External Data Mappers\DICOM_Converter\bin\Debug\log4net.dll">D:\Dev\soeconversions\trunk\APAC_Tools\ConvTool\External Data Mappers\DICOM_Converter\bin\Debug\log4net.dll</Reference>
+  <Reference Relative="..\..\..\soeconversions\trunk\APAC_Tools\ConvTool\External Data Mappers\DICOM_Converter\bin\x64\Release\Dicom.Core.dll">D:\Dev\soeconversions\trunk\APAC_Tools\ConvTool\External Data Mappers\DICOM_Converter\bin\x64\Release\Dicom.Core.dll</Reference>
+  <Reference Relative="..\..\..\soeconversions\trunk\APAC_Tools\ConvTool\External Data Mappers\DICOM_Converter\bin\x64\Release\Dicom.Native64.dll">D:\Dev\soeconversions\trunk\APAC_Tools\ConvTool\External Data Mappers\DICOM_Converter\bin\x64\Release\Dicom.Native64.dll</Reference>
+  <Reference Relative="..\..\..\soeconversions\trunk\APAC_Tools\ConvTool\External Data Mappers\DICOM_Converter\bin\x64\Release\DICOM_Converter.dll">D:\Dev\soeconversions\trunk\APAC_Tools\ConvTool\External Data Mappers\DICOM_Converter\bin\x64\Release\DICOM_Converter.dll</Reference>
+  <Reference Relative="..\..\..\soeconversions\trunk\APAC_Tools\ConvTool\External Data Mappers\DICOM_Converter\bin\x64\Release\log4net.dll">D:\Dev\soeconversions\trunk\APAC_Tools\ConvTool\External Data Mappers\DICOM_Converter\bin\x64\Release\log4net.dll</Reference>
 </Query>
 
 //var fileName = @"D:\Conversions\RCI_Fanta_Devonport\Fanta Devonport_Mediadent\Fanta Devonport Mediadent Patients\000001\40759576680maurice ralph.DIC";

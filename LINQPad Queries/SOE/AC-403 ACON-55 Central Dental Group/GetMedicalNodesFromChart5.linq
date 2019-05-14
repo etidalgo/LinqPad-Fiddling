@@ -10,8 +10,10 @@
 
 var sqlConnection = new SqlConnection("server=AKDERNEST;Integrated Security=SSPI;database=Upsize_data_AU");
 sqlConnection.Open();
+var patientNotes = Flux.Conversion.Exact.Adapters.ExactAdapter.GetNotesUsingSuppiedFields(sqlConnection, "__NOTE_Merged", null);
 var medicalNotes = Flux.Conversion.Exact.Adapters.ExactAdapter.GetMedicalNotesAndAlertsUsingSuppliedFields(sqlConnection, "__NOTE_Merged", null);
 var clinicalNotes = Flux.Conversion.Exact.Adapters.ExactAdapter.GetClinicalNotes(sqlConnection, "__NOTE_Merged", null);
+patientNotes.Count().Dump();
 medicalNotes.Count().Dump();
 clinicalNotes.Count().Dump();
 // clinicalNotes.Dump();

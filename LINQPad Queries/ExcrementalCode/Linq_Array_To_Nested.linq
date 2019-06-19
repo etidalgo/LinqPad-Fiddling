@@ -20,7 +20,7 @@ Comment CreateThread(params string[] threadParticipants) {
 	var root = parent;
 	foreach( var participant in threadParticipants.Skip(1) ) {
 		var child = new Comment(participant, new List<Comment>());
-		parent.Replies = parent.Replies.Concat(new []{child});
+		parent.Replies = parent.Replies.Append(child);
 		parent = child;
 	}
 	return root;

@@ -20,6 +20,10 @@ void Main()
     Console.WriteLine(hashes.Take(5));
     Console.WriteLine(hashes.Take(6));
     Console.WriteLine(hashes.Take(7));
+	
+    Console.WriteLine("Enumerable.Range(0, 10).ToList().Select(act => GetMockCommitHash()); does return!");
+    var hashbrowns = Enumerable.Range(0, 10).ToList().Select(act => GetMockCommitHash());
+	hashbrowns.Dump();
 }
 
 // Define other methods and classes here

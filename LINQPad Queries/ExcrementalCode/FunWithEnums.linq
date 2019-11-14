@@ -2,6 +2,11 @@
 
 void Main()
 {
+	var conditions = new[]{ArtifactCondition.Fair, ArtifactCondition.Mint };
+    var conditionsCSV = conditions.Select(xlt => xlt.ToString()).Concatenate(",");
+	conditionsCSV.Dump();
+	
+
 	Console.WriteLine(ArtifactCondition.Fair);
 	Console.WriteLine("-------------");
 
@@ -11,6 +16,14 @@ void Main()
 	foreach (ArtifactCondition artifactCondition in Enum.GetValues(typeof(ArtifactCondition))) {
 		Console.WriteLine("{0}{1}",  artifactCondition.ToString().PadRight(nameColumnWidth), String.Format($"{artifactCondition}").PadLeft(countColumnWidth));
 	}
+}
+
+public static class StringExtensions {
+        public static IEnumerable<T> EmptyIfNull<T>(this IEnumerable<T> items) =>
+            items ?? Enumerable.Empty<T>();
+
+	public static string Concatenate(this IEnumerable<string> items, string separator) =>
+        string.Join(separator, items.EmptyIfNull());
 }
 
 public enum ArtifactCondition {

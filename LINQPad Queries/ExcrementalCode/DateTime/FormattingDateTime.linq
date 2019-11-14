@@ -3,7 +3,6 @@
   <Namespace>System.Globalization</Namespace>
 </Query>
 
-
 var dateTime = new DateTime(2017, 04, 01, 16, 20, 00);
 
 dateTime.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture).Dump();
@@ -12,3 +11,5 @@ string.Format(CultureInfo.InvariantCulture, "Arrived at: {0}", dateTime.ToString
 dateTime.ToString("s", CultureInfo.InvariantCulture).Dump(); // not good for file system names
 dateTime.ToString("yyyy.MM.dd-HH.mm.ss", CultureInfo.InvariantCulture).Dump();
 
+string.Format($"{DateTime.MinValue}").Dump();
+string.Format($"{DateTime.MaxValue}").Dump();

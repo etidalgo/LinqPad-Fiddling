@@ -6,7 +6,6 @@
   <Namespace>System.Runtime.InteropServices</Namespace>
 </Query>
 
-
 throw new Exception("Use ConvertCmiToBmp project"); 
  
 var rawContent = File.ReadAllBytes(@"C:\Users\ernest.tidalgo\SOE\Tasks\AC-383 DI Tool to convert images from Mediasuite (D4W) to ExaminePro\RF_00050316.cmi");
@@ -40,7 +39,6 @@ if (object.ReferenceEquals(writerBuff, myPrewrittenBuff)) {
     int bytes  = Math.Abs(myPrewrittenBuff.Stride) * bitmap.Height;
     byte[] rgbValues = new byte[bytes];
 
-
 	// fill in rgb values
 	var currentPixel = 0;
 	var startingOffset = 119 + 1; // offset 119, 2nd pixel after
@@ -62,4 +60,3 @@ handle.Free();
 // use buff at will...
 
 bitmap.Save(@"c:\temp\CmiConverted.bmp", ImageFormat.Bmp);
-

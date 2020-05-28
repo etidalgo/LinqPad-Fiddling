@@ -1,7 +1,8 @@
 <Query Kind="Statements" />
 
-var guid = Guid.NewGuid();
-var first = guid.ToString().Substring(0, 13);
-var last =  guid.ToString().Substring(14);
+var guid = Guid.NewGuid().ToString();
 guid.Dump();
-Console.WriteLine($"{first} {last}");
+guid.Length.Dump();
+var (first, last) = (guid.Substring(0, 13), guid.Substring(14));
+
+Console.WriteLine($"Name: {first} {last}");

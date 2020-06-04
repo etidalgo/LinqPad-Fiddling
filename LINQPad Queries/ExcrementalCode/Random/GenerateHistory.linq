@@ -12,7 +12,8 @@ void Main()
 	var totalMessages = conversationHistory.Aggregate(0, (total, session) => total + session.Count());
 	conversationHistory.Count().Dump();
 	totalMessages.Dump();
-	conversationHistory.Skip(conversationHistory.Count()-10).Dump();
+	conversationHistory.ForEach(ch => Console.WriteLine(ch.First().timestamp));
+	conversationHistory.Skip(conversationHistory.Count()-5).Dump();
 }
 
 // Define other methods and classes here

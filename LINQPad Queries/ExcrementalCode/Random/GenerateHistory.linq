@@ -3,7 +3,7 @@
 void Main()
 {
 	var daysAgo = -400;
-	var maxSessions = 1500; // approx right for 400 days
+	var maxSessions = 2000; // approx right for 400 days to ensure reasonable performance
 	var start = DateTime.Now.AddDays(daysAgo); 
 	var team = GetTeams().Skip(2).Take(1).First();
 	team.Dump();
@@ -12,8 +12,15 @@ void Main()
 	var totalMessages = conversationHistory.Aggregate(0, (total, session) => total + session.Count());
 	conversationHistory.Count().Dump();
 	totalMessages.Dump();
-	conversationHistory.ForEach(ch => Console.WriteLine(ch.First().timestamp));
+	// conversationHistory.ForEach(ch => Console.WriteLine(ch.First().timestamp));
 	conversationHistory.Skip(conversationHistory.Count()-5).Dump();
+	
+	var team2 = GetTeams().Skip(3).Take(1).First();
+	var conversationHistory2 = GenerateHistory(team2, start).Take(maxSessions).Where(ch => (ch.Last()).timestamp < DateTime.Now).ToList();
+	var totalMessages2 = conversationHistory2.Aggregate(0, (total, session) => total + session.Count());
+	conversationHistory2.Count().Dump();
+	totalMessages2.Dump();
+	conversationHistory2.Skip(conversationHistory2.Count()-5).Dump();	
 }
 
 // Define other methods and classes here
@@ -33,7 +40,7 @@ public IEnumerable<IEnumerable<(string sender, string message, DateTime timestam
 		var conversation = GenerateSession(users, sessionStart);
 		yield return conversation;
 		var sessionEnd = (conversation.Last()).timestamp;
-		sessionStart = sessionEnd.AddMinutes(Randomizer.Random.Next(45, 900));
+		sessionStart = sessionEnd.AddMinutes(Randomizer.Random.Next(37, 701));
 	}
 }
 

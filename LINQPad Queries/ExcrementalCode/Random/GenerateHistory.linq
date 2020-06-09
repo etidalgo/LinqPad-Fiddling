@@ -3,7 +3,7 @@
 void Main()
 {
 	var daysAgo = -400;
-	var maxSessions = 2000; // approx right for 400 days to ensure reasonable performance
+	var maxSessions = 2000; // approx right for 400 days to ensure reasonable density of messages over time
 	var start = DateTime.Now.AddDays(daysAgo); 
 	var team = GetTeams().Skip(2).Take(1).First();
 	team.Dump();

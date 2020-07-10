@@ -19,4 +19,10 @@ void PrintCounts(Dictionary<string,int> counts) {
 	foreach( var count in counts ) {
 		Console.WriteLine("{0}{1}",  count.Key.PadRight(nameColumnWidth), count.Value.ToString().PadLeft(countColumnWidth));
 	}
+	
+	// [Formatting types in .NET | Microsoft Docs] (https://docs.microsoft.com/en-us/dotnet/standard/base-types/formatting-types?view=netframework-4.7.2)
+	//  The string is right-aligned in the field if the field width is a positive value, and it is left-aligned if the field width is a negative value. 
+	Console.WriteLine("{0,-15}{1,-10}", "Name", "Count");
+	counts.ToList().ForEach(ct => Console.WriteLine("{0,-15}{1,-10}",  ct.Key, ct.Value.ToString()));
+	// ugly because of variable spacing, cannot 
 }

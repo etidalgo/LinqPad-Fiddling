@@ -12,8 +12,8 @@ void Main()
 	// Uses current user's aws credentials. Originally expected AWS_DEFAULT_REGION to be set as system environment
 	var rootParameterPath = "/auth/v0/master/SOE/ascend-wavelength-api/";
 	
-	// get all organization_users under uk-dev
-	var tier = "uk-dev";
+	// get all organization_users under tier
+	var tier = "ac-1545-au";
 	
 	var userAuthentications  = LoadUserAuthenticationsFromParameterStore(tier);
 	userAuthentications.Dump();
@@ -60,7 +60,7 @@ private IEnumerable<UserAuthentication> LoadUserAuthenticationsFromParameterStor
 
 (string userName, int organizationId) ExtractOrganizationUserValues(string organizationUserParameter){
 	var rootParameterPath = "/auth/v0/master/SOE/ascend-wavelength-api/";
-	var tier = "uk-dev";
+	var tier = "ac-1545-au";
 	var parameterType = "organization_users";
 	var organizationUsersBasePath = $"{rootParameterPath}{tier}/{parameterType}";
 

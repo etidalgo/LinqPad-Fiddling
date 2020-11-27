@@ -24,16 +24,25 @@ public class LambdaLoggerWrapper<T> : ILambdaLogger
 {
     private T _logger { get; }
 	private Action<T, string> _logAction { get; }
+	private Action<T, string> _logLineAction { get; }
  
     public LambdaLoggerWrapper(T logger, Action<T, string>logAction)
     {
         this._logger = logger;
 		this._logAction = logAction;
+		this._logLineAction = logAction;
     }
- 
+
+    public LambdaLoggerWrapper(T logger, Action<T, string>logAction, Action<T, string>logLineAction)
+    {
+        this._logger = logger;
+		this._logAction = logAction;
+		this._logLineAction = logLineAction;
+    }
+	
     public void Log(string message) => this._logAction(this._logger, message);
  
-    public void LogLine(string message) => this._logAction(this._logger, message);
+    public void LogLine(string message) => this._logLineAction(this._logger, message);
 }
 
 // You can define other methods, fields, classes and namespaces here

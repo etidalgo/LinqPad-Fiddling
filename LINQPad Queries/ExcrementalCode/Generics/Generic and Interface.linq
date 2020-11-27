@@ -1,4 +1,5 @@
 <Query Kind="Program">
+  <Reference>&lt;ProgramFilesX64&gt;\dotnet\shared\Microsoft.AspNetCore.App\5.0.0\Microsoft.Extensions.Logging.Abstractions.dll</Reference>
   <Reference>&lt;ProgramFilesX64&gt;\dotnet\shared\Microsoft.AspNetCore.App\5.0.0\Microsoft.Extensions.Logging.dll</Reference>
   <Namespace>Microsoft.Extensions.DependencyInjection</Namespace>
   <Namespace>Microsoft.Extensions.Logging</Namespace>
@@ -6,11 +7,16 @@
 
 void Main()
 {
-	var loggerFactory = ( Microsoft.Extensions.Logging.ILoggerFactory)new LoggerFactory();
-	loggerFactory.AddSerilog(serilogLogger);
-	var logger = loggerFactory.CreateLogger<TCategoryName>();
+	var logger = new SimpleLogger();
+	
+	var lambdaLogger = new LambdaLoggerWrapper<SimpleLogger>(logger, (lgr, txt) => { lgr.DumpToConsole(txt); });
+	
+	lambdaLogger.Log("Holy carp");
+	lambdaLogger.LogLine("Too many levels of indirection");
+}
 
-	// var lambdaLogger = new LambdaLoggerWrapper
+public class SimpleLogger{
+	public void DumpToConsole(string text) => Console.WriteLine(text);
 }
 
 public class LambdaLoggerWrapper<T> : ILambdaLogger
@@ -31,26 +37,26 @@ public class LambdaLoggerWrapper<T> : ILambdaLogger
 }
 
 // You can define other methods, fields, classes and namespaces here
+//
+// Summary:
+//     Lambda runtime logger.
+public interface ILambdaLogger
+{
     //
     // Summary:
-    //     Lambda runtime logger.
-    public interface ILambdaLogger
-    {
-        //
-        // Summary:
-        //     Logs a message to AWS CloudWatch Logs. Logging will not be done: If the role
-        //     provided to the function does not have sufficient permissions.
-        //
-        // Parameters:
-        //   message:
-        void Log(string message);
-        //
-        // Summary:
-        //     Logs a message, followed by the current line terminator, to AWS CloudWatch Logs.
-        //     Logging will not be done: If the role provided to the function does not have
-        //     sufficient permissions.
-        //
-        // Parameters:
-        //   message:
-        void LogLine(string message);
-    }
+    //     Logs a message to AWS CloudWatch Logs. Logging will not be done: If the role
+    //     provided to the function does not have sufficient permissions.
+    //
+    // Parameters:
+    //   message:
+    void Log(string message);
+    //
+    // Summary:
+    //     Logs a message, followed by the current line terminator, to AWS CloudWatch Logs.
+    //     Logging will not be done: If the role provided to the function does not have
+    //     sufficient permissions.
+    //
+    // Parameters:
+    //   message:
+    void LogLine(string message);
+}

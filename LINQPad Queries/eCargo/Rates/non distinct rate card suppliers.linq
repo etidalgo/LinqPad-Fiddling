@@ -1,8 +1,8 @@
 <Query Kind="Program">
-  <Reference Relative="..\..\..\..\Tools\RatesMigrator\packages\CsvHelper.2.16.3.0\lib\net45\CsvHelper.dll">D:\dev\Tools\RatesMigrator\packages\CsvHelper.2.16.3.0\lib\net45\CsvHelper.dll</Reference>
-  <Reference Relative="..\..\..\..\Tools\RatesMigrator\packages\Insight.Database.Core.5.2.8\lib\NET45\Insight.Database.dll">D:\dev\Tools\RatesMigrator\packages\Insight.Database.Core.5.2.8\lib\NET45\Insight.Database.dll</Reference>
-  <Reference Relative="..\..\..\..\eCargo\ThirdParty\NuGetPackages\NodaTime.2.2.3\lib\net45\NodaTime.dll">D:\dev\eCargo\ThirdParty\NuGetPackages\NodaTime.2.2.3\lib\net45\NodaTime.dll</Reference>
-  <Reference Relative="..\..\..\..\Tools\RatesMigrator\RatesMigrator\obj\Debug\RatesMigrator.exe">D:\dev\Tools\RatesMigrator\RatesMigrator\obj\Debug\RatesMigrator.exe</Reference>
+  <Reference>D:\dev\Tools\RatesMigrator\packages\CsvHelper.2.16.3.0\lib\net45\CsvHelper.dll</Reference>
+  <Reference>D:\dev\Tools\RatesMigrator\packages\Insight.Database.Core.5.2.8\lib\NET45\Insight.Database.dll</Reference>
+  <Reference>D:\dev\eCargo\ThirdParty\NuGetPackages\NodaTime.2.2.3\lib\net45\NodaTime.dll</Reference>
+  <Reference>D:\dev\Tools\RatesMigrator\RatesMigrator\obj\Debug\RatesMigrator.exe</Reference>
   <NuGetReference>System.ValueTuple</NuGetReference>
   <Namespace>CsvHelper</Namespace>
   <Namespace>CsvHelper.Configuration</Namespace>
